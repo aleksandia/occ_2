@@ -1,5 +1,6 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { DocumentIcon, ImageIcon } from '@sanity/icons';
+import { defineArrayMember, defineField, defineType } from 'sanity';
+import gallery from '../objects/gallery'; // Importiere das Gallery-Schema
 
 export default defineType({
   type: 'document',
@@ -29,7 +30,6 @@ export default defineType({
       title: 'Overview',
       type: 'array',
       of: [
-        // Paragraphs
         defineArrayMember({
           lists: [],
           marks: {
@@ -56,9 +56,8 @@ export default defineType({
       name: 'body',
       title: 'Body',
       description:
-        "This is where you can write the page's content. Including custom blocks like timelines for more a more visual display of information.",
+        "This is where you can write the page's content. Including custom blocks like timelines for a more visual display of information.",
       of: [
-        // Paragraphs
         defineArrayMember({
           type: 'block',
           marks: {
@@ -77,55 +76,31 @@ export default defineType({
               },
             ],
           },
-          styles: [],
         }),
-        // Custom blocks
         defineArrayMember({
           name: 'timeline',
           type: 'timeline',
         }),
-        defineField({
+        defineArrayMember({
           type: 'image',
           icon: ImageIcon,
           name: 'image',
           title: 'Image',
-          options: {
-            hotspot: true,
-          },
-          preview: {
-            select: {
-              imageUrl: 'asset.url',
-              title: 'caption',
-            },
-          },
+          options: { hotspot: true },
           fields: [
-            defineField({
-              title: 'Caption',
-              name: 'caption',
-              type: 'string',
-            }),
-            defineField({
-              name: 'alt',
-              type: 'string',
-              title: 'Alt text',
-              description:
-                'Alternative text for screenreaders. Falls back on caption if not set',
-            }),
+            defineField({ title: 'Caption', name: 'caption', type: 'string' }),
+            defineField({ name: 'alt', type: 'string', title: 'Alt text' }),
           ],
         }),
-        defineField({ type: 'youtube' as any }),
+        defineArrayMember({ type: 'youtube' as any }),
+        defineArrayMember({ name: 'gallery', type: 'gallery' }), // Galerie hinzugefügt
       ],
     }),
   ],
   preview: {
-    select: {
-      title: 'title',
-    },
+    select: { title: 'title' },
     prepare({ title }) {
-      return {
-        subtitle: 'Page',
-        title,
-      }
+      return { subtitle: 'Page', title };
     },
   },
-})
+});

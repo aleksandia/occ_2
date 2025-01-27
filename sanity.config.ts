@@ -41,6 +41,7 @@ export default defineConfig({
       milestone,
       timeline,
       youtube,
+      gallery,
     ],
   },
   plugins: [

@@ -19,6 +19,8 @@ import youtube from 'schemas/objects/youtube'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
 import { debugSecrets } from '@sanity/preview-url-secret/sanity-plugin-debug-secrets'
+import gallery from 'schemas/objects/gallery'
+
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE
 

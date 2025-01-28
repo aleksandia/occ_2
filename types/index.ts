@@ -64,3 +64,15 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   ogImage?: Image
 }
+
+export interface PagePayload {
+  body?: PortableTextBlock[]
+  name?: string
+  overview?: PortableTextBlock[]
+  title?: string
+  slug?: string
+  gallery?: {
+    images: Image[]
+  }
+}
+

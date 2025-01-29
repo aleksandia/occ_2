@@ -1,9 +1,10 @@
-import { PageHead } from 'components/PageHead';
-import { Layout } from 'components/Layout';
-import { Header } from 'components/Header';
-import { CustomPortableText } from 'components/CustomPortableText';
-import { ScrollUp } from 'components/ScrollUp';
+import { PageHead } from 'components/PageHead'; // Falls nicht in `shared`, Pfad prüfen
+import { Layout } from 'components/shared/Layout';
+import { Header } from 'components/shared/Header';
+import { CustomPortableText } from 'components/shared/CustomPortableText';
+import { ScrollUp } from 'components/shared/ScrollUp';
 import type { PagePayload, SettingsPayload } from 'types';
+
 
 interface PageProps {
   page?: PagePayload;

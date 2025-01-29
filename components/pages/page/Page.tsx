@@ -1,4 +1,4 @@
-import { PageHead } from 'components/PageHead'; // Falls nicht in `shared`, Pfad prüfen
+import { PageHead } from 'components/pages/page'; // Falls nicht in `shared`, Pfad prüfen
 import { Layout } from 'components/shared/Layout';
 import { Header } from 'components/shared/Header';
 import { CustomPortableText } from 'components/shared/CustomPortableText';

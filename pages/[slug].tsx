@@ -1,4 +1,5 @@
-import { Page, PagePreview } from 'components/pages/page';
+// pages/[slug].tsx
+import { Page, PagePreview } from '../components/pages/page';
 import { readToken } from 'lib/sanity.api';
 import { getClient } from 'lib/sanity.client';
 import { resolveHref } from 'lib/sanity.links';
@@ -9,8 +10,7 @@ import {
   settingsQuery,
 } from 'lib/sanity.queries';
 import type { GetStaticProps } from 'next';
-import { PagePayload, SettingsPayload } from 'types';
-
+import type { PagePayload, SettingsPayload } from 'types';
 import type { SharedPageProps } from './_app';
 
 interface PageProps extends SharedPageProps {
